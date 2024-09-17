@@ -1,52 +1,16 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Días</title>
-    <style>
-        /* Tu estilo CSS aquí */
-    </style>
+    <title>Recarga Automática</title>
 </head>
 <body>
-    <div class="container">
-        <img src="Imagen1.png" alt="Fondo" class="background">
-        <div class="overlay">
-            <div class="text-top">
-                <span class="lets">Let’s</span> <span class="go">GO</span>
-            </div>
-            <div class="counter" id="counter">-52</div>
-            <div class="days">DÍAS</div>
-            <div class="small-bev">URBAN <span class="bev">EV</span></div>
-            <div class="text-bottom">
-                <span class="one">1ª</span>
-                <span class="vvfe">vVFF</span>
-                <div class="kw-info">(KW 44.4 - M100)</div>
-            </div>
-        </div>
-    </div>
-
+    <h1>Esta página se recarga cada 5 segundos</h1>
     <script>
-        // Función para recargar la página cada 5 segundos
-        function setupAutoReload() {
-            setInterval(() => {
-                location.reload();
-            }, 5000); // 5000 milisegundos = 5 segundos
-        }
-
-        // Inicializar la configuración de recarga automática
-        setupAutoReload();
-
-        // Actualizar el contador
-        function updateCounter() {
-            const today = new Date();
-            const targetDate = new Date(today.getFullYear(), 9, 31); // Octubre es el mes 9 en JavaScript (0-indexado)
-            const differenceInTime = targetDate - today;
-            const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
-            document.getElementById('counter').textContent = `-${differenceInDays}`;
-        }
-
-        updateCounter();
+        setInterval(() => {
+            location.reload();
+        }, 5000); // 5000 milisegundos = 5 segundos
     </script>
 </body>
 </html>
