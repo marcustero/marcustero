@@ -5,161 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador de Días</title>
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-}
-
-.container {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-.overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con 60% de opacidad */
-    z-index: 2;
-}
-
-.text-top {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    font-size: 3rem;
-    z-index: 3;
-}
-
-.lets {
-    color: white;
-    font-size: 7rem;
-    font-weight: lighter;
-    font-family: 'Cupra ExtraLight', sans-serif;
-}
-
-.go {
-    color: #9acd32; /* Verde claro */
-    font-size: 7rem;
-    font-weight: bold;
-    font-family: 'Cupra ExtraLight', sans-serif;
-}
-
-.counter {
-    font-size: 15rem;
-    font-weight: bold;
-    color: white;
-    position: relative;
-    z-index: 3;
-    margin-top: 10px;
-    font-family: 'Cupra', sans-serif;
-
-}
-
-.days {
-    font-size: 5rem;
-    color: #cce016; /* Amarillo claro */
-    position: relative;
-    z-index: 3;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-left: 40px;
-    font-family: 'Cupra Display', sans-serif;
-}
-
-.small-bev {
-    position: absolute;
-    top: 13%;
-    right: 10%;
-    font-size: 3rem;
-    color: white;
-    z-index: 3;
-    font-family: 'Cupra Display', sans-serif;
-}
-
-.bev {
-    color: #9acd32; /* Verde claro */
-}
-
-.text-bottom {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    font-size: 2.5rem;
-    z-index: 3;
-}
-
-.one {
-    color: white;
-    font-weight: bold;
-    font-family: 'Cupra ExtraLight', sans-serif;
-}
-
-.vvfe {
-    color: white;
-    font-size: 2.5rem;
-    text-decoration: none;
-    margin-left: 10px;
-    font-family: 'Cupra ExtraLight', sans-serif;
-}
-
-.kw-info {
-    font-size: 1.5rem;
-    color: white;
-    margin-top: 5px;
-    font-family: 'Cupra ExtraLight', sans-serif;
-}
-
+        /* Tu estilo CSS aquí */
     </style>
-
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:i0f84bba906045b4af568ee102a52dcb msdt:dt="string">9.1 Publications|84f409af-10c5-4d2f-84de-80c7c7b53cba</mso:i0f84bba906045b4af568ee102a52dcb>
-<mso:TaxCatchAll msdt:dt="string">27;#9.1 Publications|84f409af-10c5-4d2f-84de-80c7c7b53cba</mso:TaxCatchAll>
-<mso:le00db0daa294656b1a5e9d8c8dc79c6 msdt:dt="string"></mso:le00db0daa294656b1a5e9d8c8dc79c6>
-<mso:RevIMComments msdt:dt="string"></mso:RevIMComments>
-<mso:RevIMExtends msdt:dt="string">{&quot;Locked&quot;:null,&quot;LockedBy&quot;:null,&quot;UnLocked&quot;:null,&quot;UnLockedBy&quot;:null,&quot;Classified&quot;:&quot;2024-09-09T13:31:49.927Z&quot;,&quot;KSUClass&quot;:&quot;84f409af-10c5-4d2f-84de-80c7c7b53cba&quot;,&quot;Reclassified&quot;:null,&quot;ReclassifiedBy&quot;:null,&quot;EDReclassified&quot;:null,&quot;EDReclassifiedBy&quot;:null,&quot;EventCreated&quot;:null,&quot;EventModified&quot;:null,&quot;EventDeleted&quot;:null,&quot;EventCreatedBy&quot;:null,&quot;EventModifiedBy&quot;:null,&quot;EventDeletedBy&quot;:null,&quot;Moved&quot;:null,&quot;MovedBy&quot;:null,&quot;MovedFrom&quot;:null}</mso:RevIMExtends>
-<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
-<mso:LegalHoldTag msdt:dt="string"></mso:LegalHoldTag>
-<mso:RevIMDeletionDate msdt:dt="string">2069-09-09T15:31:42Z</mso:RevIMDeletionDate>
-<mso:RevIMBCS msdt:dt="string">27;#9.1 Publications|84f409af-10c5-4d2f-84de-80c7c7b53cba</mso:RevIMBCS>
-<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
 </head>
 <body>
     <div class="container">
@@ -180,15 +27,52 @@ body, html {
     </div>
 
     <script>
-        // Obtener la fecha actual y calcular los días faltantes hasta el 31 de octubre
-const today = new Date();
-const targetDate = new Date(today.getFullYear(), 9, 31); // Octubre es el mes 9 en JavaScript (0-indexed)
-const differenceInTime = targetDate - today;
-const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
+        // Función para calcular el tiempo hasta la próxima recarga
+        function getTimeUntilNextReload() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinutes = now.getMinutes();
+            
+            // Horas de recarga
+            const reloadTimes = [
+                { hours: 0, minutes: 0 },
+                { hours: 6, minutes: 0 },
+                { hours: 7, minutes: 15 }
+            ];
 
-// Mostrar el contador de días
-document.getElementById('counter').textContent = `-${differenceInDays}`;
+            // Encuentra la próxima hora de recarga
+            for (let time of reloadTimes) {
+                if (currentHour < time.hours || (currentHour === time.hours && currentMinutes < time.minutes)) {
+                    return new Date(now.getFullYear(), now.getMonth(), now.getDate(), time.hours, time.minutes) - now;
+                }
+            }
 
+            // Si no hay más recargas hoy, calcula para el siguiente día a la primera hora de recarga
+            const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, reloadTimes[0].hours, reloadTimes[0].minutes);
+            return nextDay - now;
+        }
+
+        // Función para recargar la página después del tiempo calculado
+        function setupAutoReload() {
+            const timeUntilReload = getTimeUntilNextReload();
+            setTimeout(() => {
+                location.reload();
+            }, timeUntilReload);
+        }
+
+        // Inicializar la configuración de recarga
+        setupAutoReload();
+
+        // Actualizar el contador
+        function updateCounter() {
+            const today = new Date();
+            const targetDate = new Date(today.getFullYear(), 9, 31); // Octubre es el mes 9 en JavaScript (0-indexado)
+            const differenceInTime = targetDate - today;
+            const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
+            document.getElementById('counter').textContent = `-${differenceInDays}`;
+        }
+
+        updateCounter();
     </script>
 </body>
 </html>
