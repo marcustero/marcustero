@@ -27,40 +27,14 @@
     </div>
 
     <script>
-        // Función para calcular el tiempo hasta la próxima recarga
-        function getTimeUntilNextReload() {
-            const now = new Date();
-            const currentHour = now.getHours();
-            const currentMinutes = now.getMinutes();
-            
-            // Horas de recarga
-            const reloadTimes = [
-                { hours: 0, minutes: 0 },
-                { hours: 6, minutes: 0 },
-                { hours: 7, minutes: 15 }
-            ];
-
-            // Encuentra la próxima hora de recarga
-            for (let time of reloadTimes) {
-                if (currentHour < time.hours || (currentHour === time.hours && currentMinutes < time.minutes)) {
-                    return new Date(now.getFullYear(), now.getMonth(), now.getDate(), time.hours, time.minutes) - now;
-                }
-            }
-
-            // Si no hay más recargas hoy, calcula para el siguiente día a la primera hora de recarga
-            const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, reloadTimes[0].hours, reloadTimes[0].minutes);
-            return nextDay - now;
-        }
-
-        // Función para recargar la página después del tiempo calculado
+        // Función para recargar la página cada 5 segundos
         function setupAutoReload() {
-            const timeUntilReload = getTimeUntilNextReload();
-            setTimeout(() => {
+            setInterval(() => {
                 location.reload();
-            }, timeUntilReload);
+            }, 5000); // 5000 milisegundos = 5 segundos
         }
 
-        // Inicializar la configuración de recarga
+        // Inicializar la configuración de recarga automática
         setupAutoReload();
 
         // Actualizar el contador
