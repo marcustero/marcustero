@@ -156,7 +156,7 @@
             <div class="small-bev">URBAN <span class="bev">EV</span></div>
             <div class="text-bottom">
                 <span class="one">1ª</span>
-                <span class="vvfe">VFF</span>
+                <span class="vvfe">PVS</span>
                 <div class="kw-info">(KW 51.3 - M100)</div>
             </div>
         </div>
@@ -176,7 +176,7 @@
         // Función para actualizar el contador
         function updateCounter() {
             const today = new Date();
-            const targetDate = new Date(2024, 11, 18); // Mes 3 es abril en JavaScript (0-indexado)
+            const targetDate = new Date(2025, 3, 25); // Mes 3 es abril en JavaScript (0-indexado)
             const differenceInTime = targetDate - today;
             const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
             document.getElementById('counter').textContent = `-${differenceInDays}`;
