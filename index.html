@@ -179,7 +179,7 @@
             const targetDate = new Date(2025, 3, 25); // Mes 3 es abril en JavaScript (0-indexado)
             const differenceInTime = targetDate - today;
             const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
-            document.getElementById('counter').textContent = `-${differenceInDays}`;
+            document.getElementById('counter').textContent = `${differenceInDays}`;
         }
 
         // Actualizar el contador al cargar la página
